@@ -1,0 +1,77 @@
+# Analysis
+
+## Script 1
+#### Specs:
+* Convolutional Layers: 1 (32 filters)
+* MaxPooling Layers: 1
+* Hidden Layers: 1 (64 neurons)
+
+#### Results:
+333/333 - 1s - 2ms/step - accuracy: 0.0572 - loss: 3.4934
+With this setup, the accuracy does not seem to increase throughout the 10 epochs and the final result shows very little accuracy and very high loss.
+
+## Script 2
+#### Specs:
+* Convolutional Layers: 1 (32 filters)
+* MaxPooling Layers: 1
+* Hidden Layers: 1 (128 neurons)
+
+#### Results:
+333/333 - 1s - 3ms/step - accuracy: 0.0540 - loss: 3.5019
+Despite having doubled the amount of neurons in the hidden layer, the results are not being affected by any significant change.
+
+## Script 3
+#### Specs:
+* Convolutional Layers: 1 (32 filters)
+* MaxPooling Layers: 1
+* Hidden Layers: 1 (256 neurons)
+
+#### Results:
+333/333 - 1s - 4ms/step - accuracy: 0.4429 - loss: 1.7445
+Despite having doubled once again the total number of neurons in the hidden layer, the accuracy remains small and the loss rather large. First improvements in the correct direction.
+
+## Script 4
+#### Specs:
+* Convolutional Layers: 2 (32/64 filters)
+* MaxPooling Layers: 2
+* Hidden Layers: 1 (256 neurons)
+
+#### Results:
+333/333 - 2s - 6ms/step - accuracy: 0.9690 - loss: 0.1496
+Adding a second convolutional layer and a maxpooling layer dramatically increases the accuracy of the model and lowers the loss value. The model also takes longer to train.
+
+## Script 5
+#### Specs:
+* Convolutional Layers: 3 (32/64/128 filters)
+* MaxPooling Layers: 3
+* Hidden Layers: 1 (256 neurons)
+
+#### Results:
+333/333 - 2s - 6ms/step - accuracy: 0.9763 - loss: 0.0943
+Adding a third convolutional layer and a maxpooling layer slightly further increases the accuracy of the model and lowers the loss value.
+
+## Script 6
+#### Specs:
+* Convolutional Layers: 3 (32/64/128 filters)
+* MaxPooling Layers: 2
+* Hidden Layers: 1 (256 neurons)
+
+#### Results:
+333/333 - 2s - 7ms/step - accuracy: 0.9759 - loss: 0.1052
+Removing the third maxpooling layer doesn't seem to affect the accuracy the loss values significantly.
+
+## Script 7 (Final setup)
+#### Specs:
+* Convolutional Layers: 3 (32/64/128 filters)
+* MaxPooling Layers: 2
+* Hidden Layers: 1 (128 neurons)
+
+#### Results:
+333/333 - 1s - 4ms/step - accuracy: 0.9735 - loss: 0.1173
+Reducing the number of neurons in the hidden layer back to 128 (in order to speed up the training of the model) has no adverse effect on the accuracy and loss values.
+
+
+
+
+
+
